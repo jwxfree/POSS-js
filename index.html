@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POS System</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Canteen</h1>
+            <h2 style="font-weight: 400; margin-top: -4vh;">Serves your cravings hot!</h2>
+        </div>
+    </header>
+<div class="container">
+    <h2>MENU</h2>
+    <div class="form-group">
+        <label for="food">Food Choice</label>
+        <select id="food">
+            <option value="burger">Burger - 60 pesos</option>
+            <option value="fries">Fries - 50 pesos</option>
+            <option value="fishbol">Fishbol - 20 pesos</option>
+            <option value="kikiam">Kikiam - 25 pesos</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" value="1">
+    </div>
+    <button onclick="addToCart()">Add to Cart</button>
+    <h3>Cart</h3>
+    <div id="cart"></div>
+    <div class="payment-form">
+        <div class="form-group">
+            <label for="cash">Cash:</label>
+            <input type="number" id="cash" min="0">
+        </div>
+        <button onclick="calculateChange()">Pay</button>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="payment-popup" id="paymentPopup">
+            <p id="changeMessage"></p>
+            <button onclick="closePaymentPopup()">OK</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
